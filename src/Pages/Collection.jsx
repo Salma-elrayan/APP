@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../Context/ShopContext';
-import { assets } from '../assets/assets';
 import Titel from '../Components/Titel';
 import ProductItem from './../Components/ProductItem';
+import dropdown_icon from './../assets/dropdown_icon.png'
 
 const Collection = () => {
   const { products ,search,showSearch } = useContext(ShopContext);
@@ -78,7 +78,7 @@ const Collection = () => {
           FILTERS
           <img
             className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`}
-            src={assets.dropdown_icon}
+            src={dropdown_icon}
             alt=""
           />
         </p>

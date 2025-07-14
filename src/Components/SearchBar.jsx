@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from './../Context/ShopContext';
-import { assets } from './../assets/assets';
 import { useLocation } from 'react-router-dom';
-
+import search_icon from './../assets/search_icon.png'
+import cross_icon from './../assets/cross_icon.png'
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);
   const[visible,setVisible]=useState(false)
@@ -26,9 +26,9 @@ else{
           type="text"
           placeholder='Search'
         />
-        <img className='w-4' src={assets.search_icon} alt="" />
+        <img className='w-4' src={search_icon} alt="" />
       </div>
-      <img onClick={() => setShowSearch(false)} className='inline w-3 cursor-pointer' src={assets.cross_icon} alt="" />
+      <img onClick={() => setShowSearch(false)} className='inline w-3 cursor-pointer' src={cross_icon} alt="" />
     </div>
   ) : null;
 };

@@ -1,8 +1,7 @@
 import React from 'react'
 import Title from './../Components/Titel';
-import { assets } from '../assets/assets';
 import NewsletterBox from './../Components/NewLatterBox';
-
+import about_img from './../assets/about_img.png'
 const About = () => {
   return (
     <div>
@@ -10,7 +9,7 @@ const About = () => {
   <Title text1={'ABOUT'} text2={'US'}/>
     </div>
     <div className='my-10  flex flex-col md:flex-row  gap-16 '>
-   <img  className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
+   <img  className='w-full md:max-w-[450px]' src={about_img} alt="" />
    <div className='flex flex-col justify-center  gap-6 md:w-2/4 text-gray-600'>
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quod, optio alias nostrum non tempora labore laborum vitae eius, ipsa cumque fuga quis dolores vel. Alias similique dignissimos reprehenderit fugiat.</p>
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate? Quibusdam, eos. Adipisci, iure corrupti modi, rem vero aliquam debitis incidunt perferendis neque aut repellat.</p>

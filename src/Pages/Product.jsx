@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
-import { assets } from '../assets/assets';
 import RelatedProducts from './../Components/RelatedProducts';
+import star_icon from './../assets/star_icon.png'
+import star_icon from './../assets/star_dull_icon.png'
+
 
 const Product = () => {
   const { productId } = useParams();
@@ -57,11 +59,11 @@ const Product = () => {
 
          
           <div className='flex items-center gap-1 mt-2'>
-            <img src={assets.star_icon} alt="" className="w-3.5" />
-            <img src={assets.star_icon} alt="" className="w-3.5" />
-            <img src={assets.star_icon} alt="" className="w-3.5" />
-            <img src={assets.star_icon} alt="" className="w-3.5" />
-            <img src={assets.star_dull_icon} alt="" className="w-3.5" />
+            <img src={star_icon} alt="" className="w-3.5" />
+            <img src={star_icon} alt="" className="w-3.5" />
+            <img src={star_icon} alt="" className="w-3.5" />
+            <img src={star_icon} alt="" className="w-3.5" />
+            <img src={star_dull_icon} alt="" className="w-3.5" />
             <p className='pl-2'>(122)</p>
           </div>
 

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from './../Context/ShopContext';
 import Titel from './../Components/Titel';
-import { assets } from '../assets/assets';
 import CartTotal from '../Components/CartTotal';
+import bin_icon from './../assets/bin_icon.png'
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity,navigate } = useContext(ShopContext);
@@ -63,7 +63,7 @@ const Cart = () => {
               <img
                 onClick={() => updateQuantity(item._id, item.size, 0)}
                 className='w-4 mr-4 sm:w-5 cursor-pointer'
-                src={assets.bin_icon}
+                src={bin_icon}
                 alt=""
               />
             </div>

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import Titel from '../Components/Titel';
 import CartTotal from './../Components/CartTotal';
-import { assets } from '../assets/assets';
 import { ShopContext } from '../Context/ShopContext';
-
+import stripe_logo from './../assets/stripe_logo.png'
+import razorpay_logo from './../assets/razorpay_logo.png'
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
   const{navigate}=useContext(ShopContext)
@@ -91,7 +91,7 @@ const PlaceOrder = () => {
               className='flex items-center gap-3 border p-2 px-3 cursor-pointer'
             >
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400' : ''}`}></p>
-              <img className='h-5 mx-4' src={assets.stripe_logo} alt="Stripe" />
+              <img className='h-5 mx-4' src={stripe_logo} alt="Stripe" />
             </div>
 
             {/* Razorpay Option */}
@@ -100,7 +100,7 @@ const PlaceOrder = () => {
               className='flex items-center gap-3 border p-2 px-3 cursor-pointer'
             >
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'razorpay' ? 'bg-green-400' : ''}`}></p>
-              <img className='h-5 mx-4' src={assets.razorpay_logo} alt="Razorpay" />
+              <img className='h-5 mx-4' src={razorpay_logo} alt="Razorpay" />
             </div>
 
             {/* Cash On Delivery Option */}
