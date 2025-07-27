@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import Titel from '../Components/Titel';
 import CartTotal from './../Components/CartTotal';
 import { ShopContext } from '../Context/ShopContext';
-import stripe_logo from './../assets/stripe_logo.png'
-import razorpay_logo from './../assets/razorpay_logo.png'
+import stripe_logo from './../../public/stripe_logo.png'
+import razorpay_logo from './../../public/razorpay_logo.png'
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
   const{navigate}=useContext(ShopContext)

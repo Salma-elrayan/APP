@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from './../Context/ShopContext';
 import Titel from './../Components/Titel';
 import CartTotal from '../Components/CartTotal';
-import bin_icon from './../assets/bin_icon.png'
+import bin_icon from './../../public/bin_icon.png'
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity,navigate } = useContext(ShopContext);

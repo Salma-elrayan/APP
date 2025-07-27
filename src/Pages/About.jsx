@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from './../Components/Titel';
 import NewsletterBox from './../Components/NewLatterBox';
-import about_img from './../assets/about_img.png'
+import about_img from './../../public/about_img.png'
 const About = () => {
   return (
     <div>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../Context/ShopContext';
 import Titel from '../Components/Titel';
 import ProductItem from './../Components/ProductItem';
-import dropdown_icon from './../assets/dropdown_icon.png'
+import dropdown_icon from './../../public/dropdown_icon.png'
 
 const Collection = () => {
   const { products ,search,showSearch } = useContext(ShopContext);

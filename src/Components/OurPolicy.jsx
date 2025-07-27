@@ -1,7 +1,7 @@
 import React from 'react'
-import exchange_icon from './../assets/exchange_icon.png'
-import quality_icon from './../assets/quality_icon.png'
-import support_img from './../assets/support_img.png'
+import exchange_icon from './../../public/exchange_icon.png'
+import quality_icon from './../../public/quality_icon.png'
+import support_img from './../../public/support_img.png'
 const OurPolicy = () => {
   return (
     <div className='flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700'>

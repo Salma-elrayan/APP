@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from '../Components/Titel'
 import NewsletterBox from '../Components/NewLatterBox'
-import contact_img from './../assets/contact_img.png'
+import contact_img from './../../public/contact_img.png'
 const Contact = () => {
   return (
     <div>

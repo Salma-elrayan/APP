@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from './../Context/ShopContext';
 import { useLocation } from 'react-router-dom';
-import search_icon from './../assets/search_icon.png'
-import cross_icon from './../assets/cross_icon.png'
+import search_icon from './../../public/search_icon.png'
+import cross_icon from './../../public/cross_icon.png'
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);
   const[visible,setVisible]=useState(false)

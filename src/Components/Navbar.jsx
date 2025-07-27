@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
-import logo from './../assets/logo.png'
-import search_icon from './../assets/search_icon.png'
-import profile_icon from './../assets/profile_icon.png'
-import cart_icon from './../assets/cart_icon.png'
-import menu_icon from './../assets/menu_icon.png'
-import dropdown_icon from './../assets/dropdown_icon.png'
+import logo from './../../public/logo.png'
+import search_icon from './../../public/search_icon.png'
+import profile_icon from './../../public/profile_icon.png'
+import cart_icon from './../../public/cart_icon.png'
+import menu_icon from './../../public/menu_icon.png'
+import dropdown_icon from './../../public/dropdown_icon.png'
 const Navbar = () => {
   const [visible,setVisible]=useState(false);
 
