@@ -6,7 +6,49 @@ import stripe_logo from './../../public/stripe_logo.png'
 import razorpay_logo from './../../public/razorpay_logo.png'
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
-  const{navigate}=useContext(ShopContext)
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [street, setStreet] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [country, setCountry] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+
+  const { navigate, placeOrder, cartItems } = useContext(ShopContext)
+
+  const handlePlaceOrder = async () => {
+    if (Object.keys(cartItems).length === 0) {
+      setMessage('Your cart is empty. Add items before placing an order.');
+      return;
+    }
+
+    if (!firstName || !lastName || !email || !street || !city || !state || !zipcode || !country || !phone) {
+      setMessage('Please fill all delivery fields.');
+      return;
+    }
+
+    const deliveryInfo = {
+      firstName,
+      lastName,
+      email,
+      street,
+      city,
+      state,
+      zipcode,
+      country,
+      phone,
+      paymentMethod: method,
+    };
+
+    const success = await placeOrder(deliveryInfo);
+    if (success) {
+      navigate('/orders');
+    }
+  };
+
   return (
     <div className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
       
@@ -16,16 +58,21 @@ const PlaceOrder = () => {
           <Titel text1={'DELIVERY'} text2={'INFORMATION'} />
         </div>
 
+        {message && <p className='text-red-600 mb-2'>{message}</p>}
         <div className='flex gap-3'>
           <input
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="text"
             placeholder='First name'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="text"
             placeholder='Last name'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </div>
 
@@ -33,12 +80,16 @@ const PlaceOrder = () => {
           className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
           type="email"
           placeholder='Email Address'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
           type="text"
           placeholder='Street'
+          value={street}
+          onChange={(e) => setStreet(e.target.value)}
         />
 
         <div className='flex gap-3'>
@@ -46,11 +97,15 @@ const PlaceOrder = () => {
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="text"
             placeholder='City'
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
           />
           <input
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="text"
             placeholder='State'
+            value={state}
+            onChange={(e) => setState(e.target.value)}
           />
         </div>
 
@@ -59,11 +114,15 @@ const PlaceOrder = () => {
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="number"
             placeholder='Zipcode'
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
           />
           <input
             className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
             type="text"
             placeholder='Country'
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
           />
         </div>
 
@@ -71,6 +130,8 @@ const PlaceOrder = () => {
           className='border border-gray-300 rounded py-1.5 px-3.5 w-full'
           type="number"
           placeholder='Phone'
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
       </div>
 
@@ -113,7 +174,7 @@ const PlaceOrder = () => {
             </div>
           </div>
           <div className='w-full  text-end mt-8 '>
-          <button onClick={()=>navigate('/orders')} className='bg-black  text-white px-16  py-3 text-sm'>PLACE ORDER</button>
+          <button onClick={handlePlaceOrder} className='bg-black  text-white px-16  py-3 text-sm'>PLACE ORDER</button>
           </div>
         </div>
       </div>

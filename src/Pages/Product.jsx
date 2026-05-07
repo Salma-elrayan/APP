@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
 import RelatedProducts from './../Components/RelatedProducts';
 import star_icon from './../../public/star_icon.png'
-import star_icon from './../../public/star_dull_icon.png'
+import star_dull_icon from './../../public/star_dull_icon.png'
 
 
 const Product = () => {
