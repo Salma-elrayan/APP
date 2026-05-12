@@ -16,7 +16,7 @@ const ShopContextProvider =(props)=>{
     useEffect(() => {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user?.email) {
-        fetch(`http://localhost:5000/api/orders/${user.email}`)
+        fetch(`/api/orders/${user.email}`)
           .then(res => res.json())
           .then(data => setOrders(data))
           .catch(error => console.error('Error loading orders:', error));
@@ -97,7 +97,7 @@ const ShopContextProvider =(props)=>{
         return false;
       }
 
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
